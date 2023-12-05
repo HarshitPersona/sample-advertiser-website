@@ -233,10 +233,9 @@
                       switch (o.label) {
                         case 0:
                           if (
-                            (console.log("EventServer _sendEvent"),
                             !(n = (0, l.getSessionStorageItem)(
                               "PERSONA_REQUEST_ID"
-                            )))
+                            ))
                           )
                             return [2];
                           o.label = 1;
@@ -291,10 +290,7 @@
                     return a(this, function (t) {
                       switch (t.label) {
                         case 0:
-                          return (
-                            console.log("Sending request"),
-                            [4, this._sendEvent("/collect", i({}, e))]
-                          );
+                          return [4, this._sendEvent("/collect", i({}, e))];
                         case 1:
                           return t.sent(), [2];
                       }
@@ -309,7 +305,7 @@
         601: (e, t) => {
           Object.defineProperty(t, "__esModule", { value: !0 }),
             (t.SESSION_STORAGE_KEYS = t.CLICK_ID = t.EVENT_SERVER_URL = void 0),
-            (t.EVENT_SERVER_URL = "http://127.0.0.1:8000"),
+            (t.EVENT_SERVER_URL = "https://events.persona3.tech"),
             (t.CLICK_ID = "prsna_id"),
             (t.SESSION_STORAGE_KEYS = { PERSONA_REQUEST_ID: t.CLICK_ID });
         },
@@ -863,7 +859,7 @@
         },
         147: (e) => {
           e.exports = JSON.parse(
-            '{"name":"attribution-sdk","version":"0.0.1","description":"","main":"dist/index.js","scripts":{"start":"npx tsc","build":"rimraf ./dist && webpack --mode production","prepare":"rimraf ./dist && npm run build"},"keywords":[],"author":"","license":"ISC","devDependencies":{"@types/node":"^20.8.7","rimraf":"^5.0.5","ts-loader":"^9.5.0","typescript":"^5.2.2","webpack":"^5.89.0","webpack-cli":"^5.1.4"},"dependencies":{"nanoid":"^5.0.2"}}'
+            '{"name":"@personaxyz/attribution-sdk","version":"0.0.1","description":"","main":"dist/index.js","scripts":{"start":"npx tsc","build":"rimraf ./dist && webpack --mode production","prepare":"rimraf ./dist && npm run build"},"keywords":[],"author":"","license":"ISC","devDependencies":{"@types/node":"^20.8.7","rimraf":"^5.0.5","ts-loader":"^9.5.0","typescript":"^5.2.2","webpack":"^5.89.0","webpack-cli":"^5.1.4"},"dependencies":{"nanoid":"^5.0.2"}}'
           );
         },
       },
@@ -901,10 +897,9 @@
             }
             return (
               (e.init = function (t) {
-                console.log("Init is happening"),
-                  e._instance ||
-                    ((e._instance = new e(t)),
-                    e._instance._client.startNewSession());
+                e._instance ||
+                  ((e._instance = new e(t)),
+                  e._instance._client.startNewSession());
               }),
               (e.track = function (e, t) {
                 var n;
